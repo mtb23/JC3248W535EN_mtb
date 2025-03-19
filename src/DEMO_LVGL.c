@@ -34,6 +34,7 @@ static const char *TAG = "DEMO_LVGL";
  */
 #include <demos/lv_demos.h>
 // #include <examples/lv_examples.h>
+#include <ui/ui.h>
 
 void setup();
 
@@ -112,11 +113,13 @@ void setup()
    * Or try out a demo.
    * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMOS_WIDGETS`
    */
-  lv_demo_widgets();
-  //     lv_demo_benchmark();
+  // lv_demo_widgets();
+  // lv_demo_benchmark();
   // lv_demo_music();
   // lv_demo_stress();
-
+  
+  // ** Square Line **/
+  ui_init();
   /* Release the mutex */
   bsp_display_unlock();
 
