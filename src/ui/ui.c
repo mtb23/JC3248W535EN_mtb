@@ -16,6 +16,7 @@ lv_obj_t * ui_ScreenPraca_Panel_PanelViolet;
 lv_obj_t * ui_ScreenPraca_Panel_PanelBlue;
 lv_obj_t * ui_ScreenPraca_Panel_PanelRed;
 lv_obj_t * ui_ScreenPraca_Panel_PanelGreen;
+lv_obj_t * ui_ScreenPraca_Panel_PanelYellow;
 lv_obj_t * ui_ScreenPraca_Dropdown_DropdownStatus;
 lv_obj_t * ui_ScreenPraca_Container_Container1;
 void ui_event_ScreenPraca_Button_BtnPraca(lv_event_t * e);
@@ -30,6 +31,9 @@ lv_obj_t * ui_ScreenPraca_Label_LabPomiar;
 void ui_event_ScreenPraca_Button_BtnPrzezbrojenie(lv_event_t * e);
 lv_obj_t * ui_ScreenPraca_Button_BtnPrzezbrojenie;
 lv_obj_t * ui_ScreenPraca_Label_LabPrzezbrojenie;
+void ui_event_ScreenPraca_Button_BtnPrzerwa(lv_event_t * e);
+lv_obj_t * ui_ScreenPraca_Button_BtnPrzerwa;
+lv_obj_t * ui_ScreenPraca_Label_LabPrc1;
 void ui_event_ScreenPraca_Button_BtnBrakObsdy(lv_event_t * e);
 lv_obj_t * ui_ScreenPraca_Button_BtnBrakObsdy;
 void ui_event_ScreenPraca_Label_LabBrakObsady(lv_event_t * e);
@@ -42,7 +46,9 @@ lv_obj_t * ui_ScreenPraca_Button_ButtonChangeScreen;
 lv_obj_t * ui_ScreenPraca_Textarea_TextArea1;
 lv_obj_t * ui_ScreenPraca_Textarea_TextMQTTData;
 // CUSTOM VARIABLES
+lv_obj_t * uic_PanelYellow;
 lv_obj_t * uic_BtnPraca;
+lv_obj_t * uic_BtnPrzerwa;
 
 // SCREEN: ui_Screen_ScreenUstawienia
 void ui_Screen_ScreenUstawienia_screen_init(void);
@@ -114,12 +120,13 @@ void ui_event_ScreenPraca_Button_BtnPraca(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 0);
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 1);
         FuncPraca(e);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 
@@ -128,12 +135,13 @@ void ui_event_ScreenPraca_Button_BtnAwaria(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 1);
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 2);
         FuncAwaria(e);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 
@@ -142,12 +150,13 @@ void ui_event_ScreenPraca_Button_BtnPomiar(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 2);
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 3);
         FuncPomiar(e);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 
@@ -156,12 +165,28 @@ void ui_event_ScreenPraca_Button_BtnPrzezbrojenie(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 3);
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 4);
         FuncPrzezbrojenie(e);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_ScreenPraca_Button_BtnPrzerwa(lv_event_t * e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if(event_code == LV_EVENT_CLICKED) {
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 5);
+        FuncPraca(e);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
     }
 }
 
@@ -170,12 +195,13 @@ void ui_event_ScreenPraca_Button_BtnBrakObsdy(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 4);
+        _ui_dropdown_set_property(ui_ScreenPraca_Dropdown_DropdownStatus, _UI_DROPDOWN_PROPERTY_SELECTED, 0);
         FuncBrakObsady(e);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelGreen, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelRed, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelBlue, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
         _ui_flag_modify(ui_ScreenPraca_Panel_PanelViolet, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+        _ui_flag_modify(ui_ScreenPraca_Panel_PanelYellow, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
     }
 }
 

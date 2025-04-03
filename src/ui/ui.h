@@ -24,6 +24,7 @@ extern lv_obj_t * ui_ScreenPraca_Panel_PanelViolet;
 extern lv_obj_t * ui_ScreenPraca_Panel_PanelBlue;
 extern lv_obj_t * ui_ScreenPraca_Panel_PanelRed;
 extern lv_obj_t * ui_ScreenPraca_Panel_PanelGreen;
+extern lv_obj_t * ui_ScreenPraca_Panel_PanelYellow;
 extern lv_obj_t * ui_ScreenPraca_Dropdown_DropdownStatus;
 extern lv_obj_t * ui_ScreenPraca_Container_Container1;
 void ui_event_ScreenPraca_Button_BtnPraca(lv_event_t * e);
@@ -38,6 +39,9 @@ extern lv_obj_t * ui_ScreenPraca_Label_LabPomiar;
 void ui_event_ScreenPraca_Button_BtnPrzezbrojenie(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPraca_Button_BtnPrzezbrojenie;
 extern lv_obj_t * ui_ScreenPraca_Label_LabPrzezbrojenie;
+void ui_event_ScreenPraca_Button_BtnPrzerwa(lv_event_t * e);
+extern lv_obj_t * ui_ScreenPraca_Button_BtnPrzerwa;
+extern lv_obj_t * ui_ScreenPraca_Label_LabPrc1;
 void ui_event_ScreenPraca_Button_BtnBrakObsdy(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPraca_Button_BtnBrakObsdy;
 void ui_event_ScreenPraca_Label_LabBrakObsady(lv_event_t * e);
@@ -50,7 +54,9 @@ extern lv_obj_t * ui_ScreenPraca_Button_ButtonChangeScreen;
 extern lv_obj_t * ui_ScreenPraca_Textarea_TextArea1;
 extern lv_obj_t * ui_ScreenPraca_Textarea_TextMQTTData;
 // CUSTOM VARIABLES
+extern lv_obj_t * uic_PanelYellow;
 extern lv_obj_t * uic_BtnPraca;
+extern lv_obj_t * uic_BtnPrzerwa;
 
 // SCREEN: ui_Screen_ScreenUstawienia
 void ui_Screen_ScreenUstawienia_screen_init(void);
