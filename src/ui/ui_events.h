@@ -10,6 +10,15 @@
 extern "C" {
 #endif
 
+void FuncPraca(lv_event_t * e);
+void FuncAwaria(lv_event_t * e);
+void FuncPomiar(lv_event_t * e);
+void FuncPrzezbrojenie(lv_event_t * e);
+void FuncBrakObsady(lv_event_t * e);
+void FuncConnectWIFI(lv_event_t * e);
+void FuncConnectMQTT(lv_event_t * e);
+void FuncSendMQTTMsg(lv_event_t * e);
+
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif

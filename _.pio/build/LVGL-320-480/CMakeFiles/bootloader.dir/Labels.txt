@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/CMakeFiles/bootloader
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/CMakeFiles/bootloader.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/CMakeFiles/bootloader-complete.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/mb10088/GitHub/JC3248W535EN_mtb/.pio/build/LVGL-320-480/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule

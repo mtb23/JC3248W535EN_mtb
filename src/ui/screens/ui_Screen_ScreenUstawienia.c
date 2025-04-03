@@ -59,19 +59,19 @@ void ui_Screen_ScreenUstawienia_screen_init(void)
     lv_textarea_set_text(ui_ScreenUstawienia_Textarea_TextAreaSSID, "MasterformIOT");
     lv_textarea_set_placeholder_text(ui_ScreenUstawienia_Textarea_TextAreaSSID, "SSID");
 
-    ui_ScreenUstawienia_Button_ButtonConnect = lv_btn_create(ui_ScreenUstawienia_Container_ContainerWifi);
-    lv_obj_set_width(ui_ScreenUstawienia_Button_ButtonConnect, 100);
-    lv_obj_set_height(ui_ScreenUstawienia_Button_ButtonConnect, 31);
-    lv_obj_set_x(ui_ScreenUstawienia_Button_ButtonConnect, 40);
-    lv_obj_set_y(ui_ScreenUstawienia_Button_ButtonConnect, 120);
-    lv_obj_add_flag(ui_ScreenUstawienia_Button_ButtonConnect, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_ScreenUstawienia_Button_ButtonConnect, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_ScreenUstawienia_Button_ButtonConnectWiFi = lv_btn_create(ui_ScreenUstawienia_Container_ContainerWifi);
+    lv_obj_set_width(ui_ScreenUstawienia_Button_ButtonConnectWiFi, 100);
+    lv_obj_set_height(ui_ScreenUstawienia_Button_ButtonConnectWiFi, 31);
+    lv_obj_set_x(ui_ScreenUstawienia_Button_ButtonConnectWiFi, 40);
+    lv_obj_set_y(ui_ScreenUstawienia_Button_ButtonConnectWiFi, 120);
+    lv_obj_add_flag(ui_ScreenUstawienia_Button_ButtonConnectWiFi, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_ScreenUstawienia_Button_ButtonConnectWiFi, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_ScreenUstawienia_Label_LabelConnect = lv_label_create(ui_ScreenUstawienia_Button_ButtonConnect);
-    lv_obj_set_width(ui_ScreenUstawienia_Label_LabelConnect, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_ScreenUstawienia_Label_LabelConnect, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_align(ui_ScreenUstawienia_Label_LabelConnect, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_ScreenUstawienia_Label_LabelConnect, "Polacz");
+    ui_ScreenUstawienia_Label_LabelConnectWiFi = lv_label_create(ui_ScreenUstawienia_Button_ButtonConnectWiFi);
+    lv_obj_set_width(ui_ScreenUstawienia_Label_LabelConnectWiFi, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_ScreenUstawienia_Label_LabelConnectWiFi, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_ScreenUstawienia_Label_LabelConnectWiFi, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_ScreenUstawienia_Label_LabelConnectWiFi, "Polacz WiFI");
 
     ui_ScreenUstawienia_Container_ContainerMQTT = lv_obj_create(ui_Screen_ScreenUstawienia);
     lv_obj_remove_style_all(ui_ScreenUstawienia_Container_ContainerMQTT);
@@ -92,7 +92,7 @@ void ui_Screen_ScreenUstawienia_screen_init(void)
     lv_obj_set_height(ui_ScreenUstawienia_Textarea_TextAdressMQTT, 40);
     lv_obj_set_x(ui_ScreenUstawienia_Textarea_TextAdressMQTT, 0);
     lv_obj_set_y(ui_ScreenUstawienia_Textarea_TextAdressMQTT, 20);
-    lv_textarea_set_text(ui_ScreenUstawienia_Textarea_TextAdressMQTT, "broker.hivemq.com");
+    lv_textarea_set_text(ui_ScreenUstawienia_Textarea_TextAdressMQTT, "test.mosquitto.org");
     lv_textarea_set_placeholder_text(ui_ScreenUstawienia_Textarea_TextAdressMQTT, "MQTT Address");
 
     ui_ScreenUstawienia_Textarea_TextMQTTPort = lv_textarea_create(ui_ScreenUstawienia_Container_ContainerMQTT);
@@ -152,11 +152,43 @@ void ui_Screen_ScreenUstawienia_screen_init(void)
                               LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_ScreenUstawienia_Keyboard_KeyboardUstawienia, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_ScreenUstawienia_Button_ButtonConnectMQTT = lv_btn_create(ui_Screen_ScreenUstawienia);
+    lv_obj_set_width(ui_ScreenUstawienia_Button_ButtonConnectMQTT, 100);
+    lv_obj_set_height(ui_ScreenUstawienia_Button_ButtonConnectMQTT, 30);
+    lv_obj_set_x(ui_ScreenUstawienia_Button_ButtonConnectMQTT, 15);
+    lv_obj_set_y(ui_ScreenUstawienia_Button_ButtonConnectMQTT, 90);
+    lv_obj_set_align(ui_ScreenUstawienia_Button_ButtonConnectMQTT, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_ScreenUstawienia_Button_ButtonConnectMQTT, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_ScreenUstawienia_Button_ButtonConnectMQTT, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_ScreenUstawienia_Label_LabelConnectMQTT = lv_label_create(ui_ScreenUstawienia_Button_ButtonConnectMQTT);
+    lv_obj_set_width(ui_ScreenUstawienia_Label_LabelConnectMQTT, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_ScreenUstawienia_Label_LabelConnectMQTT, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_ScreenUstawienia_Label_LabelConnectMQTT, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_ScreenUstawienia_Label_LabelConnectMQTT, "Polacz MQTT");
+
+    ui_ScreenUstawienia_Button_ButtonSendMQTTMsg = lv_btn_create(ui_Screen_ScreenUstawienia);
+    lv_obj_set_width(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, 100);
+    lv_obj_set_height(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, 30);
+    lv_obj_set_x(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, 130);
+    lv_obj_set_y(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, 90);
+    lv_obj_set_align(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_ScreenUstawienia_Label_LabelSendMQTTMsg = lv_label_create(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg);
+    lv_obj_set_width(ui_ScreenUstawienia_Label_LabelSendMQTTMsg, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_ScreenUstawienia_Label_LabelSendMQTTMsg, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_ScreenUstawienia_Label_LabelSendMQTTMsg, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_ScreenUstawienia_Label_LabelSendMQTTMsg, "Send MQTT");
+
     lv_obj_add_event_cb(ui_ScreenUstawienia_Button_ButtonChangeScreen1,
                         ui_event_ScreenUstawienia_Button_ButtonChangeScreen1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ScreenUstawienia_Textarea_TextAreaPassword, ui_event_ScreenUstawienia_Textarea_TextAreaPassword,
                         LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ScreenUstawienia_Textarea_TextAreaSSID, ui_event_ScreenUstawienia_Textarea_TextAreaSSID,
+                        LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_ScreenUstawienia_Button_ButtonConnectWiFi, ui_event_ScreenUstawienia_Button_ButtonConnectWiFi,
                         LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ScreenUstawienia_Textarea_TextAdressMQTT, ui_event_ScreenUstawienia_Textarea_TextAdressMQTT,
                         LV_EVENT_ALL, NULL);
@@ -170,5 +202,9 @@ void ui_Screen_ScreenUstawienia_screen_init(void)
                         ui_event_ScreenUstawienia_Textarea_TextAreaStanowisko, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_ScreenUstawienia_Keyboard_KeyboardUstawienia,
                         ui_event_ScreenUstawienia_Keyboard_KeyboardUstawienia, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_ScreenUstawienia_Button_ButtonConnectMQTT, ui_event_ScreenUstawienia_Button_ButtonConnectMQTT,
+                        LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_ScreenUstawienia_Button_ButtonSendMQTTMsg, ui_event_ScreenUstawienia_Button_ButtonSendMQTTMsg,
+                        LV_EVENT_ALL, NULL);
 
 }

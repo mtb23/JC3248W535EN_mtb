@@ -20,10 +20,11 @@ extern "C" {
 void ui_Screen_ScreenPraca_screen_init(void);
 void ui_event_Screen_ScreenPraca(lv_event_t * e);
 extern lv_obj_t * ui_Screen_ScreenPraca;
-extern lv_obj_t * ui_ScreenPraca_Panel_PanelGreen;
-extern lv_obj_t * ui_ScreenPraca_Panel_PanelRed;
-extern lv_obj_t * ui_ScreenPraca_Panel_PanelBlue;
 extern lv_obj_t * ui_ScreenPraca_Panel_PanelViolet;
+extern lv_obj_t * ui_ScreenPraca_Panel_PanelBlue;
+extern lv_obj_t * ui_ScreenPraca_Panel_PanelRed;
+extern lv_obj_t * ui_ScreenPraca_Panel_PanelGreen;
+extern lv_obj_t * ui_ScreenPraca_Dropdown_DropdownStatus;
 extern lv_obj_t * ui_ScreenPraca_Container_Container1;
 void ui_event_ScreenPraca_Button_BtnPraca(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPraca_Button_BtnPraca;
@@ -45,8 +46,9 @@ void ui_event_ScreenPraca_Textarea_EdOperator(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPraca_Textarea_EdOperator;
 void ui_event_ScreenPraca_Keyboard_KeybOperator(lv_event_t * e);
 extern lv_obj_t * ui_ScreenPraca_Keyboard_KeybOperator;
-extern lv_obj_t * ui_ScreenPraca_Dropdown_DropdownStatus;
 extern lv_obj_t * ui_ScreenPraca_Button_ButtonChangeScreen;
+extern lv_obj_t * ui_ScreenPraca_Textarea_TextArea1;
+extern lv_obj_t * ui_ScreenPraca_Textarea_TextMQTTData;
 // CUSTOM VARIABLES
 extern lv_obj_t * uic_BtnPraca;
 
@@ -62,8 +64,9 @@ void ui_event_ScreenUstawienia_Textarea_TextAreaPassword(lv_event_t * e);
 extern lv_obj_t * ui_ScreenUstawienia_Textarea_TextAreaPassword;
 void ui_event_ScreenUstawienia_Textarea_TextAreaSSID(lv_event_t * e);
 extern lv_obj_t * ui_ScreenUstawienia_Textarea_TextAreaSSID;
-extern lv_obj_t * ui_ScreenUstawienia_Button_ButtonConnect;
-extern lv_obj_t * ui_ScreenUstawienia_Label_LabelConnect;
+void ui_event_ScreenUstawienia_Button_ButtonConnectWiFi(lv_event_t * e);
+extern lv_obj_t * ui_ScreenUstawienia_Button_ButtonConnectWiFi;
+extern lv_obj_t * ui_ScreenUstawienia_Label_LabelConnectWiFi;
 extern lv_obj_t * ui_ScreenUstawienia_Container_ContainerMQTT;
 extern lv_obj_t * ui_ScreenUstawienia_Label_LabelBrokerMQTT;
 void ui_event_ScreenUstawienia_Textarea_TextAdressMQTT(lv_event_t * e);
@@ -80,6 +83,12 @@ void ui_event_ScreenUstawienia_Textarea_TextAreaStanowisko(lv_event_t * e);
 extern lv_obj_t * ui_ScreenUstawienia_Textarea_TextAreaStanowisko;
 void ui_event_ScreenUstawienia_Keyboard_KeyboardUstawienia(lv_event_t * e);
 extern lv_obj_t * ui_ScreenUstawienia_Keyboard_KeyboardUstawienia;
+void ui_event_ScreenUstawienia_Button_ButtonConnectMQTT(lv_event_t * e);
+extern lv_obj_t * ui_ScreenUstawienia_Button_ButtonConnectMQTT;
+extern lv_obj_t * ui_ScreenUstawienia_Label_LabelConnectMQTT;
+void ui_event_ScreenUstawienia_Button_ButtonSendMQTTMsg(lv_event_t * e);
+extern lv_obj_t * ui_ScreenUstawienia_Button_ButtonSendMQTTMsg;
+extern lv_obj_t * ui_ScreenUstawienia_Label_LabelSendMQTTMsg;
 // CUSTOM VARIABLES
 
 // EVENTS

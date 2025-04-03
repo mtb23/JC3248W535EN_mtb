@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "esp_log.h": "c",
+        "esp_event.h": "c",
+        "system_error": "c"
+    }
+}
